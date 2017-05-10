@@ -1,0 +1,43 @@
+@import "ember-bootstrap/bootstrap";
+
+@font-face {
+  font-family: MoonFlower;
+  src: url('/assets/fonts/Moon Flower.ttf');
+}
+
+body {
+  background-image: url('/images/paper.png');
+  font-family: 'MoonFlower';
+  font-size: 36px;
+}
+
+a {
+  transition: all .22s;
+
+  padding: 1rem 4rem;
+}
+
+a:hover {
+  text-decoration: none;
+  padding-left: 3rem;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.feature-image {
+  width: 100rem;
+  margin-top: 5rem;
+  border: 10px solid white;
+  box-shadow: 2px 2px 20px;
+}
+
+.right-pane {
+  width: 10%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding-top: 20rem;
+  position: absolute;
+}
