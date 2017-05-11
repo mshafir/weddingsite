@@ -1,0 +1,64 @@
+<h1>RSVP</h1>
+
+<div class="align-center">
+  <form class="align-left form-width">
+    <div>{{input placeholder="Name(s)"}}</div>
+    <div>{{input placeholder="Email"}}</div>
+    <div>{{input type="number" placeholder="Number of people"}}</div>
+
+    <hr />
+
+    <div>
+      {{#radio-button name="coming" value="yes" groupValue=coming}}
+          I'm Coming
+      {{/radio-button}}
+    </div>
+    <div>
+      {{#radio-button name="coming" value="maybe" groupValue=coming}}
+          Maybe, let's see
+      {{/radio-button}}
+    </div>
+    <div>
+      {{#radio-button name="coming" value="no" groupValue=coming}}
+          Can't
+      {{/radio-button}}
+    </div>
+
+
+    {{#if (or (eq coming "yes") (eq coming "maybe"))}}
+
+      <hr />
+
+      <div>Where do you want to stay?</div>
+      <div>
+        {{#radio-button name="staying" value="camp" groupValue=staying}}
+            I'll stay at the camp
+        {{/radio-button}}
+      </div>
+      <div>
+        {{#radio-button name="staying" value="else" groupValue=staying}}
+            I'll stay elsewhere
+        {{/radio-button}}
+      </div>
+      <div>
+        {{#radio-button name="staying" value="day" groupValue=staying}}
+            Nowhere, I'm coming just for the day
+        {{/radio-button}}
+      </div>
+      <div>
+        {{#radio-button name="staying" value="unknown" groupValue=staying}}
+            I dunno
+        {{/radio-button}}
+      </div>
+
+      <hr />
+      {{input placeholder="Where are you coming from?"}}
+
+      <hr />
+      <div>Do you have any food requirements?</div>
+      <div>The wedding will be vegetarian and kosher.</div>
+      {{input}}
+
+    {{/if}}
+  </form>
+</div>

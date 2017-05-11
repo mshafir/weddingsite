@@ -1,1 +1,15 @@
-{{outlet}}
+<div class="align-center">
+  {{write-text text="Bekah and Michael"}}
+  {{write-text text="Are getting married!" fontSize=36}}
+
+  <div class="content">
+    {{liquid-outlet}}
+  </div>
+</div>
+
+<div class="navigation right-pane">
+  <div>{{#link-to "index"}}Pictures{{/link-to}}</div>
+  <div>{{#link-to "story"}}Story{{/link-to}}</div>
+  <div>{{#link-to "event"}}Event{{/link-to}}</div>
+  <div>{{#link-to "rsvp"}}RSVP{{/link-to}}</div>
+</div>

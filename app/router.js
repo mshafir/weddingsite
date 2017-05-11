@@ -8,9 +8,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('story');
-  this.route('events');
+  this.route('event');
   this.route('registry');
   this.route('guests');
+  this.route('rsvp');
 });
 
 export default Router;
