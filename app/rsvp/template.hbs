@@ -1,31 +1,41 @@
 <h1>RSVP</h1>
 
-<div class="align-center">
-  <form class="align-left form-width">
-    <div>{{input placeholder="Name(s)"}}</div>
-    <div>{{input placeholder="Email"}}</div>
-    <div>{{input type="number" placeholder="Number of people"}}</div>
+{{#liquid-if (eq coming '') use="toLeft"}}
+  <div class="align-center">
+    <form class="align-left form-width">
+      <div>{{input placeholder="Name(s)" value=name}}</div>
+      <div>{{input placeholder="Email" value=email}}</div>
+      <div>{{input type="number" placeholder="Number of people" value=number}}</div>
 
-    <hr />
+      {{#liquid-if (and name email number) use="toDown"}}
+        <hr />
 
-    <div>
-      {{#radio-button name="coming" value="yes" groupValue=coming}}
-          I'm Coming
-      {{/radio-button}}
-    </div>
-    <div>
-      {{#radio-button name="coming" value="maybe" groupValue=coming}}
-          Maybe, let's see
-      {{/radio-button}}
-    </div>
-    <div>
-      {{#radio-button name="coming" value="no" groupValue=coming}}
-          Can't
-      {{/radio-button}}
-    </div>
+        Hi {{name}}, we eagerly await your response!
+        <div>
+          {{#radio-button name="coming" value="yes" groupValue=coming}}
+              I'm Coming
+          {{/radio-button}}
+        </div>
+        <div>
+          {{#radio-button name="coming" value="maybe" groupValue=coming}}
+              Maybe, let's see
+          {{/radio-button}}
+        </div>
+        <div>
+          {{#radio-button name="coming" value="no" groupValue=coming}}
+              Can't
+          {{/radio-button}}
+        </div>
+      {{/liquid-if}}
+    </form>
+  </div>
+{{/liquid-if}}
 
-
-    {{#if (or (eq coming "yes") (eq coming "maybe"))}}
+{{#liquid-if (or (eq coming "yes") (eq coming "maybe")) use="toLeft"}}
+  <div class="align-center">
+    <form class="align-left form-width">
+      <h3>We're so excited you can make it!</h3>
+      <div>We have just a few more questions to help us coordinate</div>
 
       <hr />
 
@@ -52,13 +62,43 @@
       </div>
 
       <hr />
-      {{input placeholder="Where are you coming from?"}}
+
+      <div>
+        {{input placeholder="Where are you coming from?" value=comingFrom}}
+      </div>
 
       <hr />
+
       <div>Do you have any food requirements?</div>
       <div>The wedding will be vegetarian and kosher.</div>
-      {{input}}
+      <div>{{input value=foodRequirements}}</div>
 
-    {{/if}}
-  </form>
-</div>
+      <br/>
+      <div class="align-right">
+        <button {{action "send"}}>Send RSVP</button>
+      </div>
+    </form>
+  </div>
+{{/liquid-if}}
+
+{{#liquid-if (or (eq coming "no")) use="toLeft"}}
+  <div class="align-center">
+    <form class="align-left form-width">
+      <div>
+        We're sorry you can't make it, but we hope to celebrate with you
+        another time!
+      </div>
+
+      <hr />
+
+      <div>Do you have any wishings you want to send?</div>
+
+      {{textarea value=wishings}}
+
+      <br/>
+      <div class="align-right">
+        <button {{action "send"}}>Send RSVP</button>
+      </div>
+    </form>
+  </div>
+{{/liquid-if}}

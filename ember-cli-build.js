@@ -8,6 +8,12 @@ module.exports = function(defaults) {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
       'importBootstrapCSS': false
+    },
+    dotEnv: {
+      clientAllowedKeys: ['FIREBASE_API_KEY', 'FIREBASE_DOMAIN', 'FIREBASE_DB_URL', 'FIREBASE_BUCKET']
+    }
+    fingerprint: {
+      exclude: ['images']
     }
   });
 

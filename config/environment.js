@@ -5,7 +5,15 @@ module.exports = function(environment) {
     modulePrefix: 'weddingsite',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
+
+    firebase: {
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_DOMAIN,
+      databaseURL: process.env.FIREBASE_DB_URL,
+      storageBucket: process.env.FIREBASE_BUCKET
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,6 +28,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
     }
   };
 

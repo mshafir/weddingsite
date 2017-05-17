@@ -14,7 +14,12 @@ body {
 h1 {
   font-weight: bold;
   letter-spacing: 0.4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 32px;
 }
 
 .outer-wrapper {
@@ -22,20 +27,45 @@ h1 {
 }
 
 .navigation {
+  height: 5rem;
+
   a {
+    @media (max-width: 320px) {
+      font-size: 32px;
+    }
     font-size: 42px;
     transition: all .22s;
     text-decoration: none;
-    padding: 1rem 4rem;
+    padding: 0.5rem;
   }
 
-  a:hover {
-    padding-left: 3rem;
+  a:hover,a.active:hover {
+    @media (max-width: 360px) {
+      font-size: 42px;
+    }
+    font-size: 58px;
   }
 
   a.active {
-    padding-left: 3rem;
+    @media (max-width: 360px) {
+      font-size: 42px;
+    }
+    font-size: 58px;
   }
+
+  div {
+    vertical-align: top;
+    display: inline-block;
+  }
+}
+
+.full-content {
+  background-color: white;
+  font-family: arial;
+  font-size: 12px;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 20px;
 }
 
 .content > .liquid-container {
@@ -47,7 +77,11 @@ h1 {
 .content > .liquid-container > .ember-view {
   margin-top: 5rem;
   box-shadow: 2px 2px 20px;
+  border-radius: 3px;
   width: 60%;
+  @media (max-width: 360px) {
+    width: 90%;
+  }
   display: inline-block;
   background-color: white;
   backface-visibility: hidden;
@@ -62,8 +96,26 @@ h1 {
   text-align: left;
 }
 
+.align-right {
+  text-align: right;
+}
+
+.fix-bottom {
+  text-align: center;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  font-weight: bolder;
+  z-index: -1;
+}
+
 form {
   display: inline-block;
+  width: 35rem;
+
+  input[type=text],input[type=number],textarea {
+    width: 35rem;
+  }
 }
 
 .feature-image {
@@ -72,21 +124,35 @@ form {
 }
 
 .more-image {
-  font-size: 64px;
   position: absolute;
-  left: 5%;
   top: 20%;
+  z-index: -1;
+}
+
+@media (max-width: 360px) {
+  .more-image {
+    top: 100%;
+    width: 100%;
+    img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .more-image {
+    font-size: 48px;
+    left: 2%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .more-image {
+    font-size: 64px;
+    left: 4%;
+  }
 }
 
 .liquid-animating .more-image {
   display: none;
-}
-
-.right-pane {
-  width: 20rem;
-  height: 100%;
-  right: 0;
-  top: 0;
-  padding-top: 20rem;
-  position: absolute;
 }

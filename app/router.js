@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('registry');
   this.route('guests');
   this.route('rsvp');
+  this.route('recorded');
+  this.route('responses');
 });
 
 export default Router;
