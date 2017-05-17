@@ -1,0 +1,34 @@
+<div class="full-content">
+  <h1>RSVPs</h1>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>number</th>
+        <th>coming</th>
+        <th>staying</th>
+        <th>comingFrom</th>
+        <th>foodRequirements</th>
+        <th>wishings</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |response|}}
+        <tr>
+          <td>{{response.name}}</td>
+          <td>{{response.email}}</td>
+          <td>{{response.number}}</td>
+          <td>{{response.coming}}</td>
+          <td>{{response.staying}}</td>
+          <td>{{response.comingFrom}}</td>
+          <td>{{response.foodRequirements}}</td>
+          <td>{{response.wishings}}</td>
+        </tr>
+      {{else}}
+        <tr><td>No Responses</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

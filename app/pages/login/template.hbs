@@ -1,0 +1,12 @@
+
+<div class="align-center login-box">
+  <h1>Please Log In to Continue</h1>
+  {{input placeholder="Enter Password" value=loginCode action="submit"}}
+  <button {{action "submit"}}>Submit</button>
+
+  <div>
+    {{#if errorMessage}}
+      <span class="label label-danger">{{errorMessage}}</span>
+    {{/if}}
+  </div>
+</div>

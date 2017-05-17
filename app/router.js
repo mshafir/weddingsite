@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login');
   this.route('story');
   this.route('event');
   this.route('registry');

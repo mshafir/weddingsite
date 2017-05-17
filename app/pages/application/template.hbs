@@ -1,7 +1,7 @@
-{{#if (eq currentRouteName 'responses')}}
-<div class="full-content">
+{{#if (or (eq currentRouteName 'responses') (eq currentRouteName 'login'))}}
+
   {{outlet}}
-</div>
+
 {{else}}
 
   <div class="align-center">
