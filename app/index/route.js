@@ -5,4 +5,4 @@ export default Ember.Route.extend({
     this._super(...arguments);
     controller.set('currentImage', 9);
   }
-})
+});

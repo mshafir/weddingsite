@@ -1,4 +1,4 @@
-import { isAnimating, finish, timeSpent, animate, stop } from 'liquid-fire';
+import { animate, stop } from 'liquid-fire';
 
 export default function() {
   stop(this.oldElement);

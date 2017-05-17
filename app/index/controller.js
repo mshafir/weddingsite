@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   imageId: Ember.computed.alias('currentImage'),
 
   randomImage() {
-    return parseInt(Math.random() * this.get('numPictures') + 1)
+    return parseInt(Math.random() * this.get('numPictures') + 1);
   },
 
   actions: {

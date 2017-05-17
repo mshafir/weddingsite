@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import TextToSVG from 'npm:text-to-svg';
-import Vivus from 'vivus';
 
 export default Ember.Component.extend({
   text: 'hello',
@@ -37,7 +36,7 @@ export default Ember.Component.extend({
     TextToSVG.load('/assets/fonts/Moon Flower.ttf', (err, textToSVG) => {
       for (let i = 0;i<text.length;i++) {
         let c = text.charAt(i);
-        let pathD = textToSVG.getD(c, this.get('options'))
+        let pathD = textToSVG.getD(c, this.get('options'));
         this.get('paths').pushObject(pathD);
       }
 

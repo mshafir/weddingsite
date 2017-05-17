@@ -11,7 +11,7 @@ module.exports = function(defaults) {
     },
     dotEnv: {
       clientAllowedKeys: ['FIREBASE_API_KEY', 'FIREBASE_DOMAIN', 'FIREBASE_DB_URL', 'FIREBASE_BUCKET']
-    }
+    },
     fingerprint: {
       exclude: ['images']
     }
