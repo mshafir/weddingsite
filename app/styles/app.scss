@@ -22,6 +22,19 @@ h3 {
   font-size: 32px;
 }
 
+p {
+  text-align: justify;
+  font-family: georgia;
+  font-size: 18px;
+  margin-top: 5rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+p:last-child {
+  margin-bottom: 3rem;
+}
+
 .outer-wrapper {
   width: 100%;
 }
@@ -86,6 +99,7 @@ h3 {
   background-color: white;
   backface-visibility: hidden;
   padding: 2rem;
+  margin-bottom: 10rem;
 }
 
 .login-box {
