@@ -9,11 +9,19 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('story');
-  this.route('location');
-  this.route('schedule');
-  this.route('registry');
-  this.route('guests');
-  this.route('rsvp');
+
+  this.route('location-camp');
+  this.route('location-brooklyn');
+
+  this.route('schedule-camp');
+  this.route('schedule-brooklyn');
+  
+  // this.route('registry');
+  // this.route('guests');
+
+  this.route('rsvp-camp');
+  this.route('rsvp-brooklyn');
+
   this.route('recorded');
   this.route('responses');
 });

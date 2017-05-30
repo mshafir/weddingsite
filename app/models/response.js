@@ -8,4 +8,6 @@ export default DS.Model.extend({
   staying: DS.attr('string'),
   comingFrom: DS.attr('string'),
   foodRequirements: DS.attr('string'),
+  anythingElse: DS.attr('string'),
+  whichWedding: DS.attr('string')
 });

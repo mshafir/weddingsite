@@ -1,0 +1,95 @@
+<h1>RSVP</h1>
+
+{{#liquid-if (eq coming '') use="toLeft"}}
+  <div class="align-center">
+    <form class="align-left form-width">
+      <div>{{input placeholder="Name(s)" value=name}}</div>
+      <div>{{input placeholder="Email" value=email}}</div>
+
+      {{#liquid-if (and name email) use="toDown"}}
+        <hr />
+
+        Hi {{name}}, we eagerly await your response!
+        <div>
+          {{#radio-button name="coming" value="yes" groupValue=coming}}
+              I'm Coming
+          {{/radio-button}}
+        </div>
+        <div>
+          {{#radio-button name="coming" value="no" groupValue=coming}}
+              Sorry, I Can't
+          {{/radio-button}}
+        </div>
+      {{/liquid-if}}
+    </form>
+  </div>
+{{/liquid-if}}
+
+{{#liquid-if (eq coming "yes") use="toLeft"}}
+  <div class="align-center">
+    <form class="align-left form-width">
+      <h3>We're so excited you can make it!</h3>
+      <div>We have just a few more questions to help us coordinate</div>
+
+      <hr />
+
+      <div>How many people are in your party?</div>
+      <div>{{input type="number" value=number}}</div>
+
+      <hr />
+
+      <div>Where are you coming from?</div>
+      <div>{{input value=comingFrom}}</div>
+
+      <hr />
+
+      <div>Do you have any food requirements?</div>
+      <div>{{input value=foodRequirements}}</div>
+
+      <hr />
+
+      <div>Anything else you want to tell us?</div>
+      <div>{{input value=anythingElse}}</div>
+
+      <br/>
+
+      <div>
+        <div class="float-left">
+          <button {{action "clearComing"}}>Go Back</button>
+        </div>
+        <div class="float-right">
+          <button {{action "send"}}>Send RSVP</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{{/liquid-if}}
+
+{{#liquid-if (eq coming "no") use="toLeft"}}
+  <div class="align-center">
+    <form class="align-left form-width">
+      <div>
+        Thank you for everything you have done to bring us to this day. <br />
+        We're sorry you can't make it, but we hope to celebrate with you
+        another time!
+      </div>
+
+      <hr />
+
+      <div>Do you have any wishes you want to send?</div>
+
+      {{textarea value=anythingElse}}
+
+      <br/>
+
+      <div>
+        <div class="float-left">
+          <button {{action "clearComing"}}>Go Back</button>
+        </div>
+        <div class="float-right">
+          <button {{action "send"}}>Send RSVP</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{{/liquid-if}}

@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   staying: '',
   comingFrom: '',
   foodRequirements: '',
-  wishings: '',
+  anythingElse: '',
 
   actions: {
     send() {
@@ -20,11 +20,15 @@ export default Ember.Controller.extend({
         staying: this.get('staying'),
         comingFrom: this.get('comingFrom'),
         foodRequirements: this.get('foodRequirements'),
-        wishings: this.get('wishings')
+        anythingElse: this.get('anythingElse'),
+        whichWedding: 'brooklyn'
       });
       response.save().then(() => {
         this.transitionToRoute('recorded');
       });
+    },
+    clearComing() {
+      this.set('coming', '');
     }
   }
 });
