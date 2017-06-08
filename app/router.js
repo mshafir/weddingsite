@@ -15,9 +15,9 @@ Router.map(function() {
 
   this.route('schedule-camp');
   this.route('schedule-brooklyn');
-  
-  // this.route('registry');
-  // this.route('guests');
+
+  this.route('lodging-camp');
+  this.route('getting-there-camp');
 
   this.route('rsvp-camp');
   this.route('rsvp-brooklyn');

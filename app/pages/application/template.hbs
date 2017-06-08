@@ -9,9 +9,9 @@
     {{write-text text="Are getting married!" fontSize=36}}
 
     {{#if content.isBrookyn}}
-      <h3>August 27th, 2017 two o'clock at Baku Palace, Brooklyn, NY</h3>
+      <h3 class="subtitle">August 27th, 2017 two o'clock at Baku Palace, Brooklyn, NY</h3>
     {{else}}
-      <h3>September 8-10th, 2017 at Camp Laurelwood</h3>
+      <h3 class="subtitle">September 8-10th, 2017 at Camp Laurelwood</h3>
     {{/if}}
 
     <hr />
@@ -22,9 +22,11 @@
         <div>{{#link-to "location-brooklyn"}}Location{{/link-to}}</div>
         <div>{{#link-to "rsvp-brooklyn"}}RSVP{{/link-to}}</div>
       {{else}}
-        <div>{{#link-to "index"}}Us{{/link-to}}</div>
-        <div>{{#link-to "location-camp"}}Location{{/link-to}}</div>
-        {{!-- <div>{{#link-to "schedule-camp"}}Schedule{{/link-to}}</div> --}}
+        <div>{{#link-to "index"}}Us{{/link-to}}</div> .
+        <div>{{#link-to "location-camp"}}Location{{/link-to}}</div> .
+        <div>{{#link-to "schedule-camp"}}Schedule{{/link-to}}</div> .
+        <div>{{#link-to "lodging-camp"}}Lodging{{/link-to}}</div> .
+        <div>{{#link-to "getting-there-camp"}}Getting There{{/link-to}}</div>
       {{/if}}
     </div>
 

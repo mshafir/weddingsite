@@ -17,18 +17,27 @@ h1 {
   margin-bottom: 2rem;
 }
 
-h3 {
+h2,h3 {
   font-weight: bold;
   font-size: 32px;
+  margin-top: 5rem;
 }
 
-p {
+h3.subtitle {
+  margin-top: 0rem;
+}
+
+p,ul,li {
   text-align: justify;
   font-family: georgia;
   font-size: 18px;
   margin-top: 5rem;
   margin-left: 10rem;
   margin-right: 10rem;
+}
+
+li {
+  margin-top: 2rem;
 }
 
 p:last-child {
