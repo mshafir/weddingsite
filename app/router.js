@@ -22,6 +22,8 @@ Router.map(function() {
   this.route('rsvp-camp');
   this.route('rsvp-brooklyn');
 
+  this.route('story');
+
   this.route('recorded');
   this.route('responses');
 });
