@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   svg: '',
 
   fontSize: 72,
+  letterSpacing: 20,
 
   init() {
     this._super(...arguments);

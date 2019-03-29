@@ -9,6 +9,11 @@ module.exports = function(defaults) {
       'importBootstrapFont': true,
       'importBootstrapCSS': false
     },
+    minifyJS: {
+      options: {
+        exclude: ["**/fastboot-is-mobile.js"]
+      }
+    },
     dotEnv: {
       clientAllowedKeys: ['FIREBASE_API_KEY', 'FIREBASE_DOMAIN', 'FIREBASE_DB_URL', 'FIREBASE_BUCKET']
     },

@@ -5,11 +5,17 @@
 {{else}}
 
   <div class="align-center">
-    {{write-text text="Bekah and Michael"}}
-    {{write-text text="Are getting married!" fontSize=36}}
+    {{#if isMobile.any}}
+      {{write-text text="Bekah and Michael" fontSize=50 letterSpacing=16}}
+      {{write-text text="Are getting married!" fontSize=36 letterSpacing=12}}
+    {{else}}
+      {{write-text text="Bekah and Michael"}}
+      {{write-text text="Are getting married!" fontSize=36}}
+    {{/if}}
 
     {{#if content.isBrookyn}}
       <h3 class="subtitle">August 27th, 2017 two o'clock at Baku Palace, Brooklyn, NY</h3>
+      <h3 class="subtitle">Reception to Follow</h3>
     {{else}}
       <h3 class="subtitle">September 8-10th, 2017 at Camp Laurelwood</h3>
     {{/if}}
@@ -18,9 +24,10 @@
 
     <div class="navigation">
       {{#if content.isBrookyn}}
-        <div>{{#link-to "index"}}Us{{/link-to}}</div>
-        <div>{{#link-to "location-brooklyn"}}Location{{/link-to}}</div>
-        <div>{{#link-to "story"}}Story{{/link-to}}</div>
+        <div>{{#link-to "index"}}Us{{/link-to}}</div> .
+        <div>{{#link-to "location-brooklyn"}}Location{{/link-to}}</div> .
+        <div>{{#link-to "getting-there-brooklyn"}}Getting There{{/link-to}}</div> .
+        <div>{{#link-to "story"}}Story{{/link-to}}</div> .
         <div>{{#link-to "rsvp-brooklyn"}}RSVP{{/link-to}}</div>
       {{else}}
         <div>{{#link-to "index"}}Us{{/link-to}}</div> .
@@ -28,7 +35,11 @@
         <div>{{#link-to "schedule-camp"}}Schedule{{/link-to}}</div> .
         <div>{{#link-to "lodging-camp"}}Lodging{{/link-to}}</div> .
         <div>{{#link-to "getting-there-camp"}}Getting There{{/link-to}}</div> .
-        <div>{{#link-to "story"}}Story{{/link-to}}</div>
+        <div>{{#link-to "story"}}Story{{/link-to}}</div> .
+        <div>{{#link-to "shabbat-camp"}}Shabbat{{/link-to}}</div> .
+        <div><a href='http://www.simpleregistry.com/bekahandmichael/' target='_blank'>
+          Registry
+        </a></div>
       {{/if}}
     </div>
 

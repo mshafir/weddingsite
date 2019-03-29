@@ -1,5 +1,5 @@
-<svg width={{multiply paths.length 20}} height="{{options.fontSize}}">
+<svg width={{multiply paths.length letterSpacing}} height="{{options.fontSize}}">
   {{#each paths as |path i|}}
-    <path stroke="black" stroke-width="2" fill="none" d="{{{path}}}" transform="translate({{multiply i 20}},0)" visibility='hidden' ></path>
+    <path stroke="black" stroke-width="2" fill="none" d="{{{path}}}" transform="translate({{multiply i letterSpacing}},0)" visibility='hidden' ></path>
   {{/each}}
 </svg>

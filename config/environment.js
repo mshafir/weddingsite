@@ -31,6 +31,12 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    emberTracker: {
+        analyticsSettings: {
+            trackingId: 'UA-100684732-1',
+        },
+    },
+
     contentSecurityPolicy: {
       'script-src': "'self' 'unsafe-eval' apis.google.com",
       'frame-src': "'self' https://*.firebaseapp.com",

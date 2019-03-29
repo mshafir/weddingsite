@@ -34,6 +34,10 @@ p,ul,li {
   margin-top: 5rem;
   margin-left: 10rem;
   margin-right: 10rem;
+  @media (max-width: $screen-sm-min) {
+    margin-left:1rem;
+    margin-right:1rem;
+  }
 }
 
 li {
@@ -51,30 +55,32 @@ p:last-child {
 }
 
 .navigation {
-  height: 5rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 
   a {
-    @media (max-width: 320px) {
+    font-size: 42px;
+    @media (max-width: $screen-sm-min) {
       font-size: 32px;
     }
-    font-size: 42px;
     transition: all .22s;
     text-decoration: none;
     padding: 0.5rem;
   }
 
   a:hover,a.active:hover {
-    @media (max-width: 360px) {
-      font-size: 42px;
-    }
     font-size: 58px;
+    @media (max-width: $screen-sm-min) {
+      font-size: 32px;
+    }
   }
 
   a.active {
-    @media (max-width: 360px) {
-      font-size: 42px;
-    }
     font-size: 58px;
+    @media (max-width: $screen-sm-min) {
+      font-size: 32px;
+      text-decoration: underline;
+    }
   }
 
   div {
@@ -103,14 +109,15 @@ p:last-child {
   box-shadow: 2px 2px 20px;
   border-radius: 3px;
   width: 60%;
-  @media (max-width: 360px) {
-    width: 90%;
-  }
   display: inline-block;
   background-color: white;
   backface-visibility: hidden;
   padding: 2rem;
   margin-bottom: 10rem;
+  @media (max-width: $screen-sm-min) {
+    width: 90%;
+    padding: 0.1rem;
+  }
 }
 
 .login-box {
@@ -167,10 +174,11 @@ form {
   z-index: -1;
 }
 
-@media (max-width: 360px) {
+@media (max-width: $screen-sm-min) {
   .more-image {
-    top: 100%;
+    top: 80%;
     width: 100%;
+    padding-bottom: 20rem;
     img {
       display: none;
     }
